@@ -1,6 +1,6 @@
 FROM archlinux/base
 
-ARG DOCKER_USER
+ARG DOCKER_USER=dragos
 
 # update
 RUN pacman -Sy && pacman --noconfirm -S base-devel libxrender sudo gtk3
