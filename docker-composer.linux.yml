@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  archlinux-gui:
+    build: 
+      context: ./ArchLinux-gui
+      dockerfile: Dockerfile
+      args:
+        - DOCKER_USER=dragos
+    image: draducanu/archlinux-gui
+
+  idea:
+    build: ./Idea
+    image: draducanu/idea
+    volumes:
+      - ~/Projects:/home/$USER/IdeaProjects
+      - ~/.config-vol/.Idea:/home/$USER/.IntelliJIdea2019.2
+      - ~/.config-vol/.Idea.share:/home/$USER/.local/share/JetBrains
+    depends_on:
+      - archlinux-gui
+
