@@ -3,8 +3,8 @@ FROM archlinux/base
 ARG DOCKER_USER=dragos
 
 # update
-RUN pacman -Sy 
-    && pacman --noconfirm -S base-devel libxrender sudo gtk3 
+RUN pacman -Sy \
+    && pacman --noconfirm -S base-devel libxrender sudo gtk3 \
     && pacman --noconfirm -Scc
 
 # add user
@@ -21,8 +21,8 @@ RUN sudo pacman --noconfirm -S git \
 	&& git clone https://aur.archlinux.org/yay.git \
 	&& cd yay \
 	&& makepkg --noconfirm -si \
-	&& cd ..
-	&& rm -fr yay
+	&& cd .. \
+	&& rm -fr yay \
 	&& sudo pacman --noconfirm -Scc
 
 	
@@ -51,5 +51,5 @@ RUN sudo pacman --noconfirm -S ttf-dejavu ttf-liberation noto-fonts \
     && echo '       <test qual="any" name="family"><string>monospace</string></test>' | sudo tee -a /etc/fonts/local.conf \
     && echo '       <edit name="family" mode="assign" binding="same"><string>Noto Mono</string></edit>' | sudo tee -a /etc/fonts/local.conf \
     && echo '   </match>' | sudo tee -a /etc/fonts/local.conf \
-    && echo '</fontconfig>' | sudo tee -a /etc/fonts/local.conf
+    && echo '</fontconfig>' | sudo tee -a /etc/fonts/local.conf \
     && sudo pacman --noconfirm -Scc
