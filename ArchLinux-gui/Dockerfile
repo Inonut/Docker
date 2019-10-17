@@ -8,10 +8,10 @@ RUN pacman -Sy
     && pacman --noconfirm -Scc
 
 # add user
-RUN useradd -mg users -s /bin/bash $DOCKER_USER \
+RUN useradd -m -G wheel -s /bin/bash $DOCKER_USER \
 	&& passwd -d $DOCKER_USER \
 	&& echo "$DOCKER_USER ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$DOCKER_USER \
-	&& chmod -R 775 /home/$DOCKER_USER
+	&& chown -R $DOCKER_USER /home/$DOCKER_USER
 
 USER $DOCKER_USER
 WORKDIR /home/$DOCKER_USER
