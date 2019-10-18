@@ -40,8 +40,5 @@ RUN sudo pacman --noconfirm -Sy \
 # clear cache
     && yay --noconfirm -Scc
 
-# persist all configs in user home
-VOLUME ["/home/$USER"]
-
 # run idea
 CMD ["/opt/intellij-idea-ultimate-edition/bin/idea.sh"]
