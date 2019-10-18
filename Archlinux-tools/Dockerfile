@@ -1,38 +1,20 @@
-FROM archlinux/base
+FROM draducanu/archlinux-user
 
-ARG DOCKER_USER=dragos
-
-# update
-RUN pacman -Sy \
-    && pacman --noconfirm -S base-devel libxrender sudo gtk3 \
-    && pacman --noconfirm -Scc
-
-# add user
-RUN useradd -m -G wheel -s /bin/bash $DOCKER_USER \
-	&& passwd -d $DOCKER_USER \
-	&& echo "$DOCKER_USER ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$DOCKER_USER \
-	&& chown -R $DOCKER_USER /home/$DOCKER_USER
-
-USER $DOCKER_USER
-WORKDIR /home/$DOCKER_USER
-
-# install yay
-RUN sudo pacman --noconfirm -S git \
+# install GUI dependences
+RUN sudo pacman --noconfirm -Sy \
+    && sudo pacman --noconfirm -S base-devel libxrender gtk3 git \
+# install yay for aur dependences
 	&& git clone https://aur.archlinux.org/yay.git \
 	&& cd yay \
 	&& makepkg --noconfirm -si \
 	&& cd .. \
 	&& rm -fr yay \
-	&& sudo pacman --noconfirm -Scc
-
-	
-# config fonts
-RUN sudo pacman --noconfirm -S ttf-dejavu ttf-liberation noto-fonts \
+# install fonts for better apparences
+	&& yay --noconfirm -S ttf-dejavu ttf-liberation noto-fonts \
     && sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d \
     && sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d \
     && sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d \
     && echo 'export FREETYPE_PROPERTIES="truetype:interpreter-version=40"' | sudo tee -a /etc/profile.d/freetype2.sh \
-    
     && echo '<?xml version="1.0"?>' | sudo tee -a /etc/fonts/local.conf \
     && echo '<!DOCTYPE fontconfig SYSTEM "fonts.dtd">' | sudo tee -a /etc/fonts/local.conf \
     && echo '<fontconfig>' | sudo tee -a /etc/fonts/local.conf \
@@ -52,4 +34,14 @@ RUN sudo pacman --noconfirm -S ttf-dejavu ttf-liberation noto-fonts \
     && echo '       <edit name="family" mode="assign" binding="same"><string>Noto Mono</string></edit>' | sudo tee -a /etc/fonts/local.conf \
     && echo '   </match>' | sudo tee -a /etc/fonts/local.conf \
     && echo '</fontconfig>' | sudo tee -a /etc/fonts/local.conf \
-    && sudo pacman --noconfirm -Scc
+# install tools
+    && yay --noconfirm -S intellij-idea-ultimate-edition jdk-openjdk yarn python python-pip \
+    && sudo archlinux-java set java-13-openjdk \
+# clear cache
+    && yay --noconfirm -Scc
+
+# persist all configs in user home
+VOLUME ["/home/$USER"]
+
+# run idea
+CMD ["/opt/intellij-idea-ultimate-edition/bin/idea.sh"]

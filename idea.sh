@@ -9,4 +9,5 @@ docker run -it --rm -e DISPLAY=:0 \
   -v ~/Projects:/home/dragos/IdeaProjects \
   -v ~/.config-vol/.Idea:/home/dragos/.IntelliJIdea2019.2 \
   -v ~/.config-vol/.Idea.share:/home/dragos/.local/share/JetBrains \
+  -v ~/.config-vol/.Idea.pref:/home/dragos/.java/.userPrefs \
   draducanu/idea
