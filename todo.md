@@ -8,9 +8,9 @@
 - new split:
     * archlinux-yay: only yay installed
     * archlinux-dev-tools: all tools that i need 
-        ** idea
-        ** git
-        ** nodejs
-        ** yarn
-        ** python
-        ** pip
+        * idea
+        * git
+        * nodejs
+        * yarn
+        * python
+        * pip
