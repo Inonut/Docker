@@ -1,16 +1,17 @@
 FROM draducanu/archlinux-user
 
-# install GUI dependences
 RUN sudo pacman --noconfirm -Sy \
-    && sudo pacman --noconfirm -S base-devel libxrender gtk3 git \
-# install yay for aur dependences
-	&& git clone https://aur.archlinux.org/yay.git \
-	&& cd yay \
-	&& makepkg --noconfirm -si \
-	&& cd .. \
-	&& rm -fr yay \
-# install fonts for better apparences
-	&& yay --noconfirm -S ttf-dejavu ttf-liberation noto-fonts \
+    && sudo pacman --noconfirm -S base-devel libxrender gtk3 nano
+
+RUN sudo pacman --noconfirm -S git
+
+RUN git clone https://aur.archlinux.org/yay.git \
+    && cd yay \
+    && makepkg --noconfirm -si \
+    && cd .. \
+    && rm -fr yay
+
+RUN yay --noconfirm -S ttf-dejavu ttf-liberation noto-fonts \
     && sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d \
     && sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d \
     && sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d \
@@ -33,12 +34,20 @@ RUN sudo pacman --noconfirm -Sy \
     && echo '       <test qual="any" name="family"><string>monospace</string></test>' | sudo tee -a /etc/fonts/local.conf \
     && echo '       <edit name="family" mode="assign" binding="same"><string>Noto Mono</string></edit>' | sudo tee -a /etc/fonts/local.conf \
     && echo '   </match>' | sudo tee -a /etc/fonts/local.conf \
-    && echo '</fontconfig>' | sudo tee -a /etc/fonts/local.conf \
-# install tools
-    && yay --noconfirm -S intellij-idea-ultimate-edition jdk-openjdk yarn python python-pip \
-    && sudo archlinux-java set java-13-openjdk \
-# clear cache
-    && yay --noconfirm -Scc
+    && echo '</fontconfig>' | sudo tee -a /etc/fonts/local.conf
 
-# run idea
-CMD ["/opt/intellij-idea-ultimate-edition/bin/idea.sh"]
+RUN yay --noconfirm -S jdk-openjdk \
+    && sudo archlinux-java set java-13-openjdk
+
+RUN yay --noconfirm -S intellij-idea-ultimate-edition \
+    && mkdir .IntelliJIdea2019.2
+
+RUN yay --noconfirm -S yarn \
+    && echo 'export PATH="$PATH:$(yarn global bin)"' | sudo tee -a ~/.bashrc
+
+RUN yarn global add @angular/cli \
+    && $(yarn global bin)/ng config -g cli.packageManager yarn
+
+RUN yay --noconfirm -S python python-pip
+
+CMD [ "/opt/intellij-idea-ultimate-edition/bin/idea.sh" ]
