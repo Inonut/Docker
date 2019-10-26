@@ -31,7 +31,7 @@ function runIdea() {
 }
 
 case $1 in
-   "bulid")
+   "build")
       buildArchlinuxUser
       buildArchlinuxGui
       buildArchlinuxTools
