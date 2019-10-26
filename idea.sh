@@ -31,14 +31,11 @@ function runIdea() {
 }
 
 case $1 in
-   "ba")
+   "bulid")
       buildArchlinuxUser
       buildArchlinuxGui
       buildArchlinuxTools
       ;;
-   "bau") buildArchlinuxUser;;
-   "bag") buildArchlinuxGui;;
-   "bat") buildArchlinuxTools;;
-   "run") runIdea;;
-   *) echo "Sorry, $1 not found";;
+   "export") echo TODO export intellij settings from container;;
+   *) runIdea;;
 esac
