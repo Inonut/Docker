@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="DockerRunConfigurationConverterProvider" />
+    <converter id="android-module-to-java-module" />
+    <converter id="android-proguard-options" />
+    <converter id="android-sdk-library" />
+    <converter id="google-app-engine-facet" />
+    <converter id="js-debug-configuration-converter" />
+    <converter id="js-predefined-libraries-merged" />
+    <converter id="junit-to-android-junit-configurations" />
+    <converter id="kotlin-non-jvm-source-roots" />
+  </applied-converters>
+  <project-files>
+    <file path="/home/dragos/IdeaProjects/Docker/.idea/Docker.iml" timestamp="1571283370000" />
+    <file path="/home/dragos/IdeaProjects/Docker/.idea/misc.xml" timestamp="1571283366000" />
+    <file path="/home/dragos/IdeaProjects/Docker/.idea/modules.xml" timestamp="1571283366000" />
+    <file path="/home/dragos/IdeaProjects/Docker/.idea/vcs.xml" timestamp="1571334355095" />
+    <file path="/home/dragos/IdeaProjects/Docker/.idea/workspace.xml" timestamp="1572107119526" />
+  </project-files>
+</conversion>
+

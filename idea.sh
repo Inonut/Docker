@@ -12,26 +12,32 @@ function buildArchlinuxTools() {
   docker push draducanu/archlinux-tools
 }
 
+function buildArchlinuxGui() {
+  echo "Build Archlinux-gui"
+  docker build ./Archlinux-gui -t draducanu/archlinux-gui
+  docker push draducanu/archlinux-gui
+}
+
 function runIdea() {
   echo "Create 'Project' dir if not exist"
   mkdir -p ~/Projects
-
-  echo "Create volume if not exist"
-  docker volume create idea-config-vol
-  docker volume create home-vol
-
+  
   echo "Run tools"
   docker run -it --rm -e DISPLAY=:0 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ~/Projects:/home/dragos/IdeaProjects \
-    -v idea-config-vol:/home/dragos/.IntelliJIdea2019.2 \
-    -v home-vol:/home \
     --net=host \
     draducanu/archlinux-tools
 }
 
 case $1 in
+   "ba")
+      buildArchlinuxUser
+      buildArchlinuxGui
+      buildArchlinuxTools
+      ;;
    "bau") buildArchlinuxUser;;
+   "bag") buildArchlinuxGui;;
    "bat") buildArchlinuxTools;;
    "run") runIdea;;
    *) echo "Sorry, $1 not found";;
