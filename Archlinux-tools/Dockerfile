@@ -5,7 +5,7 @@ RUN yay --noconfirm -S jdk-openjdk \
 
 RUN yay --noconfirm -S intellij-idea-ultimate-edition 
 COPY .IntelliJIdea2019.2 /home/dragos/.IntelliJIdea2019.2
-RUN sudo chmod -R ugo+rw /home/dragos/.IntelliJIdea2019.2
+RUN sudo chmod -R ugo+rwx /home/dragos/.IntelliJIdea2019.2
 
 RUN yay --noconfirm -S yarn \
     && echo 'export PATH="$PATH:$(yarn global bin)"' | sudo tee -a ~/.bashrc
