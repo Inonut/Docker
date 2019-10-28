@@ -1,6 +1,6 @@
 FROM archlinux/base
 
-ARG DOCKER_USER=idea
+ARG DOCKER_USER=chrome
 
 COPY mirrorlist /etc/pacman.d/mirrorlist
 
@@ -19,7 +19,7 @@ USER $DOCKER_USER
 # change dir to user dir
 WORKDIR /home/$DOCKER_USER
 
-RUN sudo pacman --noconfirm -S base-devel libxrender gtk3
+RUN sudo pacman --noconfirm -S base-devel libxrender
 
 RUN sudo pacman --noconfirm -S git
 
@@ -54,21 +54,8 @@ RUN yay --noconfirm -S ttf-dejavu ttf-liberation noto-fonts \
     && echo '   </match>' | sudo tee -a /etc/fonts/local.conf \
     && echo '</fontconfig>' | sudo tee -a /etc/fonts/local.conf
 
-RUN yay --noconfirm -S jdk-openjdk \
-    && sudo archlinux-java set java-13-openjdk
+RUN yay --noconfirm -S google-chrome
 
-RUN yay --noconfirm -S intellij-idea-ultimate-edition
-COPY .IntelliJIdea2019.2 .IntelliJIdea2019.2
-RUN sudo chmod -R ugo+rwx .IntelliJIdea2019.2
+RUN yay --noconfirm -S gtk3 nspr glibc alsa-utils pulseaudio
 
-RUN yay --noconfirm -S yarn \
-    && echo 'export PATH="$PATH:$(yarn global bin)"' | sudo tee -a ~/.bashrc
-
-RUN yarn global add @angular/cli \
-    && $(yarn global bin)/ng config -g cli.packageManager yarn
-
-RUN yay --noconfirm -S python python-pip
-
-RUN yay --noconfirm -S git
-
-CMD [ "/opt/intellij-idea-ultimate-edition/bin/idea.sh" ]
+CMD /usr/bin/google-chrome-stable
