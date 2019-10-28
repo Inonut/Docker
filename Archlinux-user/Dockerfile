@@ -2,9 +2,11 @@ FROM archlinux/base
 
 ARG DOCKER_USER=dragos
 
+COPY mirrorlist /etc/pacman.d/mirrorlist
+
 # update
 RUN pacman -Sy \
-    && pacman --noconfirm -S sudo \
+    && pacman --noconfirm -S sudo nano
 # clear cache
     && pacman --noconfirm -Scc \
 # add user

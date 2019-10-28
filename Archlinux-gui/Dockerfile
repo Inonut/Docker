@@ -1,7 +1,7 @@
 FROM draducanu/archlinux-user
 
 RUN sudo pacman --noconfirm -Sy \
-    && sudo pacman --noconfirm -S base-devel libxrender gtk3 nano
+    && sudo pacman --noconfirm -S base-devel libxrender gtk3 alsa-utils pulseaudio nspr glibc
 
 RUN sudo pacman --noconfirm -S git
 
