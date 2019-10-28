@@ -15,7 +15,7 @@ RUN yarn global add @angular/cli \
 
 RUN yay --noconfirm -S python python-pip
 
-RUN yay -S git \
-    && dbus-uuidgen > /var/lib/dbus/machine-id
+RUN yay --noconfirm -S git \
+    && echo $(dbus-uuidgen) | sudo tee -a /var/lib/dbus/machine-id
 
 CMD [ "/opt/intellij-idea-ultimate-edition/bin/idea.sh" ]
