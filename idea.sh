@@ -1,21 +1,9 @@
 #!/bin/bash
 
-function buildArchlinuxUser() {
-  echo "Build Archlinux-user"
-  docker build ./Archlinux-user -t draducanu/archlinux-user
-  docker push draducanu/archlinux-user
-}
-
 function buildArchlinuxTools() {
   echo "Build Archlinux-tools"
   docker build ./Archlinux-tools -t draducanu/archlinux-tools
   docker push draducanu/archlinux-tools
-}
-
-function buildArchlinuxGui() {
-  echo "Build Archlinux-gui"
-  docker build ./Archlinux-gui -t draducanu/archlinux-gui
-  docker push draducanu/archlinux-gui
 }
 
 function runIdea() {
@@ -46,8 +34,6 @@ function exportIdeaConfig() {
 
 case $1 in
    "build")
-      buildArchlinuxUser
-      buildArchlinuxGui
       buildArchlinuxTools
       ;;
    "export") exportIdeaConfig;;
