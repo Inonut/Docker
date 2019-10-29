@@ -1,9 +1,8 @@
 #!/bin/bash
 
-function buildArchlinuxTools() {
-  echo "Build Archlinux-tools"
-  docker build ./Archlinux-tools -t draducanu/archlinux-tools
-  docker push draducanu/archlinux-tools
+function buildAlpineTools() {
+  docker build ./Alpine-tools -t draducanu/idea
+  docker push draducanu/idea
 }
 
 function runIdea() {
@@ -13,13 +12,13 @@ function runIdea() {
   echo "Run tools"
   docker run -it --rm -e DISPLAY=:0 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v ~/Projects:/home/dragos/IdeaProjects \
+    -v ~/Projects:/home/developer/IdeaProjects \
     --net=host \
-    draducanu/archlinux-tools
+    draducanu/idea
 }
 
 function exportIdeaConfig() {
-  root=~/IdeaProjects/Docker/Archlinux-tools/
+  root=~/IdeaProjects/Docker/Alpine-tools/
   cp -fr ~/.IntelliJIdea2019.2/ "$root"
 
   eval=$(find "$root" -iname eval 2>/dev/null | grep -e \..*/config/eval)
@@ -34,7 +33,7 @@ function exportIdeaConfig() {
 
 case $1 in
    "build")
-      buildArchlinuxTools
+      buildAlpineTools
       ;;
    "export") exportIdeaConfig;;
    *) runIdea;;
