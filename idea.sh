@@ -38,3 +38,4 @@ case $1 in
    "export") exportIdeaConfig;;
    *) runIdea;;
 esac
+
