@@ -16,6 +16,9 @@ RUN apk --no-cache --update add \
     # Web tools
         yarn nodejs
 
+RUN yarn global add @angular/cli && \
+    $(yarn global bin)/ng config -g cli.packageManager yarn
+
 # Install IntelliJ Ultimate
 ARG IDEA_VERSION=2019.2.4-no-jbr
 RUN wget https://download.jetbrains.com/idea/ideaIU-$IDEA_VERSION.tar.gz && \
@@ -39,9 +42,6 @@ WORKDIR /home/$USERNAME
 
 RUN echo 'export PS1="\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$ \[\033[00m\]"' | sudo tee -a ~/.bashrc && \
     echo 'export PATH="$PATH:$(yarn global bin)"' | sudo tee -a ~/.bashrc
-
-RUN yarn global add @angular/cli && \
-    $(yarn global bin)/ng config -g cli.packageManager yarn
 
 COPY .IntelliJIdea2019.2 .IntelliJIdea2019.2
 RUN sudo chmod -R ugo+rwx .IntelliJIdea2019.2
