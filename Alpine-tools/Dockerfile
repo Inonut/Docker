@@ -43,6 +43,9 @@ WORKDIR /home/$USERNAME
 RUN echo 'export PS1="\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$ \[\033[00m\]"' | sudo tee -a ~/.bashrc && \
     echo 'export PATH="$PATH:$(yarn global bin)"' | sudo tee -a ~/.bashrc
 
+RUN git config --global user.email 'dockeridea@fake.com' && \
+    git config --global user.name 'Docker Idea'
+
 COPY .IntelliJIdea2019.2 .IntelliJIdea2019.2
 RUN sudo chmod -R ugo+rwx .IntelliJIdea2019.2
 
