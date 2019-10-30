@@ -998,3 +998,202 @@ Show list of processes
 2019-10-30 18:59:33,044 [  30311]   INFO - mponents.impl.stores.StoreUtil - saveProjectsAndApp took 497 ms 
 2019-10-30 18:59:33,406 [  30673]   INFO - g.FileBasedIndexProjectHandler - Reindexing refreshed files: 39 to update, calculated in 95ms 
 2019-10-30 18:59:33,527 [  30794]   INFO - .diagnostic.PerformanceWatcher - Reindexing refreshed files took 120ms; general responsiveness: ok; EDT responsiveness: ok 
+2019-10-30 20:33:18,561 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2019-10-30 20:33:18,578 [     17]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IU-192.7142.36, 29 Oct 2019 04:02) 
+2019-10-30 20:33:18,578 [     17]   INFO -        #com.intellij.idea.Main - OS: Linux (5.3.7-2-manjaro, amd64) 
+2019-10-30 20:33:18,578 [     17]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_222-b10 (IcedTea) 
+2019-10-30 20:33:18,578 [     17]   INFO -        #com.intellij.idea.Main - JVM: 25.222-b10 (OpenJDK 64-Bit Server VM) 
+2019-10-30 20:33:18,578 [     17]   INFO -        #com.intellij.idea.Main - JVM Args: -Xms128m -Xmx1986m -XX:ReservedCodeCacheSize=240m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -XX:CICompilerCount=2 -Dsun.io.useCanonPrefixCache=false -Djava.net.preferIPv4Stack=true -Djdk.http.auth.tunneling.disabledSchemes="" -XX:+HeapDumpOnOutOfMemoryError -XX:-OmitStackTraceInFastThrow -Djdk.attach.allowAttachSelf -Dkotlinx.coroutines.debug=off -Djdk.module.illegalAccess.silent=true -Dawt.useSystemAAFontSettings=lcd -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine -Dsun.tools.attach.tmp.only=true -XX:ErrorFile=/home/developer/java_error_in_IDEA_%p.log -XX:HeapDumpPath=/home/developer/java_error_in_IDEA.hprof -Didea.paths.selector=IntelliJIdea2019.2 -Djb.vmOptionsFile=/home/developer/.IntelliJIdea2019.2/config/idea64.vmoptions -Didea.jre.check=true 
+2019-10-30 20:33:18,578 [     17]   INFO -        #com.intellij.idea.Main - ext: /usr/lib/jvm/java-1.8-openjdk/jre/lib/ext: [cldrdata.jar, meta-index, dnsns.jar, sunpkcs11.jar, sunjce_provider.jar, sunec.jar, localedata.jar, jaccess.jar, zipfs.jar, nashorn.jar] 
+2019-10-30 20:33:18,578 [     17]   INFO -        #com.intellij.idea.Main - charsets: JNU=UTF-8 file=UTF-8 
+2019-10-30 20:33:18,592 [     31]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 20 ms 
+2019-10-30 20:33:18,644 [     83]   INFO - plication.impl.ApplicationImpl - CPU cores: 12; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@52d4e4a7[Running, parallelism = 11, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@36b20e16 
+2019-10-30 20:33:18,676 [    115]   INFO -        #com.intellij.idea.Main - WM detected: KWin 
+2019-10-30 20:33:21,374 [   2813]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor profiler-java-gradle.xml 
+2019-10-30 20:33:25,968 [   7407]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor profiler-java-gradle.xml 
+2019-10-30 20:33:26,159 [   7598]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: ASP (192.7142.36), Android Support (10.3.4), Angular and AngularJS (192.7142.36), Ant (192.7142.36), Application Servers View (192.7142.36), Arquillian (192.7142.36), AspectJ (192.7142.36), Bytecode Viewer (192.7142.36), CFML (192.7142.36), CSS (192.7142.36), ChangeReminder (192.7142.36), Cloud Foundry (192.7142.36), CoffeeScript (192.7142.36), Configuration Script (192.7142.36), Copyright (192.7142.36), Coverage (192.7142.36), Cucumber for Groovy (192.7142.36), Cucumber for Java (192.7142.36), Database Tools and SQL (192.7142.36), Dependency Structure Matrix (192.7142.36), Docker (192.7142.36), Drools (192.7142.36), Eclipse Interoperability (192.7142.36), EditorConfig (192.7142.36), Emma (192.7142.36), Flash/Flex (192.7142.36), FreeMarker (192.7142.36), GWT (192.7142.36), Geronimo Integration (192.7142.36), Gherkin (192.7142.36), Git (192.7142.36), GitHub (192.7142.36), GlassFish (192.7142.36), Google App Engine (192.7142.36), Gradle (192.7142.36), Gradle Integration Extension (192.7142.36), Gradle-Maven (192.7142.36), Grails (192.7142.36), Groovy (192.7142.36), Guice (192.7142.36), HTML Tools (192.7142.36), HTTP Client (192.7142.36), Haml (192.7142.36), Heroku (192.7142.36), Hibernate (192.7142.36), IDE Settings Sync (192.7142.36), IDEA CORE (192.7142.36), IntelliLang (192.7142.36), JBoss Frameworks Base (192.7142.36), JBoss Seam (192.7142.36), JBoss Seam Pageflow (192.7142.36), JBoss Seam Pages (192.7142.36), JBoss jBPM (192.7142.36), JSR45 (192.7142.36), JUnit (192.7142.36), Java (192.7142.36), Java Bytecode Decompiler (192.7142.36), Java EE: Batch Applications (192.7142.36), Java EE: Bean Validation (192.7142.36), Java EE: Contexts and Dependency Injection (192.7142.36), Java EE: EJB, JPA, Servlets (192.7142.36), Java EE: JMS, JSON Processing, Concurrency, Transaction  (192.7142.36), Java EE: Java Server Faces (192.7142.36), Java EE: RESTful Web Services (JAX-RS) (192.7142.36), Java EE: Web Services (JAX-WS) (192.7142.36), Java EE: WebSockets (192.7142.36), Java IDE Customization (192.7142.36), Java Internationalization (192.7142.36), Java Server Pages (JSP) (192.7142.36), Java Stream Debugger (192.7142.36), JavaFX (192.7142.36), JavaScript Debugger (192.7142.36), JavaScript Intention Power Pack (192.7142.36), JavaScript and TypeScript (192.7142.36), Jetty Integration (192.7142.36), Kotlin (1.3.41-release-IJ2019.2-1), Less (192.7142.36), Machine Learning Code Completion (192.7142.36), Markdown (192.7142.36), Maven (192.7142.36), Maven Integration Extension (192.7142.36), Mercurial (192.7142.36), NodeJS (192.7142.36), OSGi (192.7142.36), OpenShift integration (192.7142.36), Perforce (192.7142.36), Performance Testing (192.7142.36), Persistence Frameworks Support (192.7142.36), Play Framework (192.7142.36), Plugin DevKit (192.7142.36), Properties (192.7142.36), Reactor (192.7142.36), Refactor-X (192.7142.36), Remote Hosts Access (192.7142.36), Resin Integration (192.7142.36), SSH Remote Run (192.7142.36), Sass (192.7142.36), Settings Repository (192.7142.36), Shell Script (192.7142.36), Smali Support (192.7142.36), Spring AOP/@AspectJ (192.7142.36), Spring Batch (192.7142.36), Spring Boot (192.7142.36), Spring Data (192.7142.36), Spring Integration Patterns (192.7142.36), Spring MVC (192.7142.36), Spring OSGi (192.7142.36), Spring Security (192.7142.36), Spring Support (192.7142.36), Spring Web Flow (192.7142.36), Spring Web Services (192.7142.36), Spring WebSocket (192.7142.36), Spy-js (192.7142.36), Struts 2 (192.7142.36), Stylus (192.7142.36), Subversion (192.7142.36), Tapestry (192.7142.36), Task Management (192.7142.36), Terminal (192.7142.36), TestNG (192.7142.36), TextMate bundles (192.7142.36), Thymeleaf (192.7142.36), Time Tracking (192.7142.36), Tomcat and TomEE Integration (192.7142.36), UI Designer (192.7142.36), UML (192.7142.36), Vaadin (192.7142.36), Velocity (192.7142.36), Virgo/dmServer (192.7142.36), W3C Validators (192.7142.36), WebLogic Integration (192.7142.36), WebSphere Integration (192.7142.36), WildFly (192.7142.36), XPathView + XSLT (192.7142.36), XSLT Debugger (192.7142.36), YAML (192.7142.36), ZKM-Unscramble (192.7142.36), tslint (192.7142.36) 
+2019-10-30 20:33:26,162 [   7601]   INFO - tellij.diagnostic.LoadingPhase - Reached SPLASH loading phase 
+2019-10-30 20:33:26,657 [   8096]   INFO - cloudConfig.CloudConfigManager - === Exit: JBA_NOT_FOUND === 
+2019-10-30 20:33:26,688 [   8127]   INFO - tellij.diagnostic.LoadingPhase - Reached CONFIGURATION_STORE_INITIALIZED loading phase 
+2019-10-30 20:33:26,765 [   8204]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=1899 
+2019-10-30 20:33:26,826 [   8265]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: /idea-IU-192.7142.36/bin/fsnotifier64 
+2019-10-30 20:33:26,829 [   8268]   WARN - pl.local.NativeFileWatcherImpl - Cannot run program "/idea-IU-192.7142.36/bin/fsnotifier64": error=2, No such file or directory 
+2019-10-30 20:33:26,831 [   8270]   WARN - api.vfs.impl.local.FileWatcher - File watcher failed to start 
+2019-10-30 20:33:27,299 [   8738]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2019-10-30 20:33:27,315 [   8754]   INFO - tellij.ide.SystemHealthMonitor - restored ignored PIPE handler 
+2019-10-30 20:33:27,319 [   8758]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63342 
+2019-10-30 20:33:27,498 [   8937]   INFO - il.indexing.FileBasedIndexImpl - File index extensions iterated:99 
+2019-10-30 20:33:27,596 [   9035]   INFO - j.ide.ui.OptionsTopHitProvider - 11 ms spent to cache options in application 
+2019-10-30 20:33:27,693 [   9132]   INFO - tellij.diagnostic.LoadingPhase - Reached FRAME_SHOWN loading phase 
+2019-10-30 20:33:27,813 [   9252]   INFO - penapi.wm.impl.GlobalMenuLinux - disable global-menu integration because some of shared libraries isn't installed: java.lang.UnsatisfiedLinkError: /idea-IU-192.7142.36/bin/libdbm64.so: Error loading shared library libglib-2.0.so.0: No such file or directory (needed by /idea-IU-192.7142.36/bin/libdbm64.so) 
+2019-10-30 20:33:28,008 [   9447]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2019-10-30 20:33:28,009 [   9448]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2019-10-30 20:33:28,020 [   9459]   WARN - s.impl.EditorColorsManagerImpl - Cannot find scheme: VibrantInk from plugin: com.intellij.database 
+2019-10-30 20:33:28,020 [   9459]   WARN - s.impl.EditorColorsManagerImpl - Cannot find scheme: WarmNeon from plugin: com.intellij.database 
+2019-10-30 20:33:28,020 [   9459]   WARN - s.impl.EditorColorsManagerImpl - Cannot find scheme: High сontrast from plugin: com.intellij.database 
+2019-10-30 20:33:28,659 [  10098]   INFO - pl$FileIndexDataInitialization - Initialization done:1260 
+2019-10-30 20:33:29,047 [  10486]   INFO - exImpl$StubIndexInitialization - Initialization done:388 
+2019-10-30 20:33:29,541 [  10980]   INFO - pl.projectlevelman.NewMappings - VCS Root: [Git] - [/home/developer/IdeaProjects/Docker] 
+2019-10-30 20:33:30,098 [  11537]   INFO - rnal.statistic.DeviceIdManager - Generating new Device ID 
+2019-10-30 20:33:30,098 [  11537]   INFO - eventLog.EventLogConfiguration - Generating salt for the device 
+2019-10-30 20:33:30,136 [  11575]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2019-10-30 20:33:30,225 [  11664]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2019-10-30 20:33:30,587 [  12026]   INFO -              PerformancePlugin - Performance Plugin is in silent mode 
+2019-10-30 20:33:30,820 [  12259]   INFO - llij.database.util.SqlDialects - SQL dialects initialized in 10 ms 
+2019-10-30 20:33:31,864 [  13303]   INFO - ge.ExternalProjectsDataStorage - Load external projects data in 3 millis (read time: 1) 
+2019-10-30 20:33:31,888 [  13327]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.highlighter.KotlinDefaultHighlightingSettingsProvider 
+2019-10-30 20:33:31,994 [  13433]   INFO - j.ide.ui.OptionsTopHitProvider - 595 ms spent to cache options in project 
+2019-10-30 20:33:32,108 [  13547]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 1322ms; general responsiveness: ok; EDT responsiveness: ok 
+2019-10-30 20:33:32,280 [  13719]   INFO - Json.PackageJsonUpdateNotifier - processPackageJsonFiles [] 
+2019-10-30 20:33:32,509 [  13948]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 1814ms; general responsiveness: ok; EDT responsiveness: ok 
+2019-10-30 20:33:32,521 [  13960]   INFO - tartup.impl.StartupManagerImpl - /home/developer/IdeaProjects/Docker/.idea case-sensitivity: expected=true actual=true 
+2019-10-30 20:33:32,539 [  13978]   INFO - tellij.diagnostic.LoadingPhase - Reached PROJECT_OPENED loading phase 
+2019-10-30 20:33:32,545 [  13984]   INFO -  #git4idea.commands.GitHandler - [.] git version 
+2019-10-30 20:33:32,560 [  13999]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 449ms; general responsiveness: ok; EDT responsiveness: ok 
+2019-10-30 20:33:32,561 [  14000]   INFO -  #git4idea.commands.GitHandler - git version 2.22.0 
+2019-10-30 20:33:32,566 [  14005]   INFO - ea.config.GitExecutableManager - Git version for /usr/bin/git : 2.22.0 
+2019-10-30 20:33:32,644 [  14083]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 3475 ms 
+2019-10-30 20:33:32,713 [  14152]   INFO - tellij.diagnostic.LoadingPhase - Reached INDEXING_FINISHED loading phase 
+2019-10-30 20:33:32,730 [  14169]   INFO - cloudConfig.CloudConfigManager - === StatusBar ignored === 
+2019-10-30 20:33:33,433 [  14872]   INFO - CompilerWorkspaceConfiguration - Available processors: 12 
+2019-10-30 20:33:33,626 [  15065]   INFO - plication.impl.ApplicationImpl - LONG VFS PROCESSING. Topic=NewVirtualFileSystem changes, offender=class com.intellij.psi.impl.file.impl.PsiVFSListener$2, message=after, time=151ms 
+2019-10-30 20:33:33,953 [  15392]   INFO - g.FileBasedIndexProjectHandler - Reindexing refreshed files: 41 to update, calculated in 232ms 
+2019-10-30 20:33:34,530 [  15969]   INFO - .diagnostic.PerformanceWatcher - Reindexing refreshed files took 577ms; general responsiveness: ok; EDT responsiveness: ok 
+2019-10-30 20:33:37,543 [  18982]   INFO - ings.impl.UpdateCheckerService - channel: release 
+2019-10-30 20:33:37,756 [  19195]   INFO - j.ide.plugins.RepositoryHelper - using cached plugin list (updated at 10/30/19 6:59 PM) 
+2019-10-30 20:33:59,977 [  41416]   INFO - rationStore.ComponentStoreImpl - Saving Project '/home/developer/IdeaProjects/Docker' DockerRunManager took 39 ms 
+2019-10-30 20:34:00,397 [  41836]   INFO - pi.util.registry.RegistryValue - Registry value 'git.explicit.commit.renames.prohibit.multiple.calls' has changed to 'false' 
+2019-10-30 20:34:24,386 [  65825]   WARN - j.openapi.wm.impl.IdeFrameImpl - Set preferredFocusableComponent in 'Local Changes' content in Version Control tool window to avoid focus-related problems. 
+2019-10-30 20:34:24,387 [  65826]   WARN - j.openapi.wm.impl.IdeFrameImpl - Local Changes tool window - parent container is hidden 
+2019-10-30 20:34:25,769 [  67208]   INFO - rationStore.ComponentStoreImpl - Saving Project '/home/developer/IdeaProjects/Docker' DockerRunManager took 34 ms 
+2019-10-30 20:34:29,943 [  71382]   INFO -  #git4idea.commands.GitHandler - [Docker] git /usr/bin/git -c credential.helper= -c core.quotepath=false -c log.showSignature=false add --ignore-errors -A -f -- Alpine-tools/Dockerfile 
+2019-10-30 20:34:29,958 [  71397]   INFO -  #git4idea.commands.GitHandler - [Docker] git /usr/bin/git -c credential.helper= -c core.quotepath=false -c log.showSignature=false commit -F /tmp/git-commit-msg-.txt -- 
+2019-10-30 20:34:29,968 [  71407]   INFO -  #git4idea.commands.GitHandler - [master 986032e] add git name and email 
+2019-10-30 20:34:29,968 [  71407]   INFO -  #git4idea.commands.GitHandler - 1 file changed, 3 insertions(+) 
+2019-10-30 20:34:31,637 [  73076]   INFO -  #git4idea.commands.GitHandler - [Docker] git /usr/bin/git -c credential.helper= -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/master:master 
+2019-10-30 20:34:31,722 [  73161]   INFO - mponents.impl.stores.StoreUtil - saveProjectsAndApp took 1524 ms 
+2019-10-30 20:34:46,546 [  87985]   INFO -  #git4idea.commands.GitHandler - remote: No anonymous write access. 
+2019-10-30 20:34:46,548 [  87987]   INFO -  #git4idea.commands.GitHandler - fatal: Authentication failed for 'https://github.com/Inonut/Docker.git/' 
+2019-10-30 20:34:46,548 [  87987]   INFO -  #git4idea.commands.GitHandler - git push took 14911 ms. Command parameters: 
+setsid /usr/bin/git -c credential.helper= -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/master:master 
+2019-10-30 20:36:14,687 [ 176126]   INFO -  #git4idea.commands.GitHandler - [Docker] git /usr/bin/git -c credential.helper= -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/master:master 
+2019-10-30 20:36:28,860 [ 190299]  ERROR - redentialStore.CredentialStore - Cannot Resolve Session Bus Address 
+java.lang.RuntimeException: Cannot Resolve Session Bus Address
+	at org.freedesktop.dbus.connections.impl.DBusConnection.lambda$getConnection$1(DBusConnection.java:238)
+	at org.freedesktop.dbus.connections.impl.DBusConnection.getConnection(DBusConnection.java:138)
+	at org.freedesktop.dbus.connections.impl.DBusConnection.getConnection(DBusConnection.java:200)
+	at org.freedesktop.dbus.connections.impl.DBusConnection.getConnection(DBusConnection.java:157)
+	at com.intellij.credentialStore.KWalletCredentialStore$Companion.create(linuxKWalletLibrary.kt:26)
+	at com.intellij.credentialStore.LinuxCredentialStoreFactory.create(NativeCredentialStoreWrapper.kt:144)
+	at com.intellij.ide.passwordSafe.impl.PasswordSafeImplKt.createPersistentCredentialStore(PasswordSafeImpl.kt:232)
+	at com.intellij.ide.passwordSafe.impl.PasswordSafeImplKt.computeProvider(PasswordSafeImpl.kt:209)
+	at com.intellij.ide.passwordSafe.impl.PasswordSafeImplKt.access$computeProvider(PasswordSafeImpl.kt:1)
+	at com.intellij.ide.passwordSafe.impl.BasePasswordSafe$_currentProvider$1.invoke(PasswordSafeImpl.kt:36)
+	at com.intellij.ide.passwordSafe.impl.BasePasswordSafe$_currentProvider$1.invoke(PasswordSafeImpl.kt:28)
+	at com.intellij.util.concurrency.SynchronizedClearableLazy.getValue(SynchronizedClearableLazy.kt:29)
+	at com.intellij.ide.passwordSafe.impl.BasePasswordSafe.getCurrentProvider$intellij_platform_credentialStore(PasswordSafeImpl.kt:42)
+	at com.intellij.ide.passwordSafe.impl.BasePasswordSafe.set(PasswordSafeImpl.kt:102)
+	at org.jetbrains.plugins.github.authentication.accounts.GithubAccountManager.updateAccountToken(GithubAccountManager.kt:52)
+	at org.jetbrains.plugins.github.authentication.GithubAuthenticationManager.registerAccount(GithubAuthenticationManager.kt:86)
+	at org.jetbrains.plugins.github.authentication.GithubAuthenticationManager.requestNewAccountForServer(GithubAuthenticationManager.kt:66)
+	at org.jetbrains.plugins.github.extensions.InteractiveCreateGithubAccountHttpAuthDataProvider.getAuthData(InteractiveCreateGithubAccountHttpAuthDataProvider.kt:23)
+	at git4idea.commands.GitHttpLoginDialog$setInteractiveDataProviders$$inlined$map$lambda$1.actionPerformed(GitHttpLoginDialog.kt:114)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3315)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:878)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:823)
+	at com.intellij.ide.IdeEventQueue.lambda$dispatchEvent$8(IdeEventQueue.java:466)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:693)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:465)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:109)
+	at java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.awt.Dialog.show(Dialog.java:1084)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$MyDialog.show(DialogWrapperPeerImpl.java:707)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl.show(DialogWrapperPeerImpl.java:432)
+	at com.intellij.openapi.ui.DialogWrapper.doShow(DialogWrapper.java:1685)
+	at com.intellij.openapi.ui.DialogWrapper.show(DialogWrapper.java:1644)
+	at git4idea.DialogManager.showDialog(DialogManager.java:56)
+	at git4idea.DialogManager.show(DialogManager.java:23)
+	at git4idea.commands.GitHttpGuiAuthenticator$DialogProvider.lambda$showAuthDialog$0(GitHttpGuiAuthenticator.java:404)
+	at com.intellij.openapi.application.impl.LaterInvocator$1.run(LaterInvocator.java:152)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.doRun(LaterInvocator.java:433)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.runNextEvent(LaterInvocator.java:416)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:399)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:878)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:827)
+	at com.intellij.ide.IdeEventQueue.lambda$dispatchEvent$8(IdeEventQueue.java:466)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:704)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:465)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: org.freedesktop.dbus.exceptions.DBusException: Cannot Resolve Session Bus Address
+	at org.freedesktop.dbus.connections.impl.DBusConnection.getDbusMachineId(DBusConnection.java:272)
+	at org.freedesktop.dbus.connections.impl.DBusConnection.lambda$getConnection$1(DBusConnection.java:224)
+	... 92 more
+2019-10-30 20:36:28,871 [ 190310]  ERROR - redentialStore.CredentialStore - IntelliJ IDEA 2019.2.4  Build #IU-192.7142.36 
+2019-10-30 20:36:28,871 [ 190310]  ERROR - redentialStore.CredentialStore - JDK: 1.8.0_222; VM: OpenJDK 64-Bit Server VM; Vendor: IcedTea 
+2019-10-30 20:36:28,871 [ 190310]  ERROR - redentialStore.CredentialStore - OS: Linux 
+2019-10-30 20:36:28,876 [ 190315]  ERROR - redentialStore.CredentialStore - Last Action: Vcs.Push 
+2019-10-30 20:36:29,639 [ 191078]   INFO -  #git4idea.commands.GitHandler - Enumerating objects: 7, done. 
+2019-10-30 20:36:29,642 [ 191081]   WARN - ess.util.ProgressIndicatorBase - This progress indicator is indeterminate, this may lead to visual inconsistency. Please call setIndeterminate(false) before you start progress.
+git4idea.commands.GitStandardProgressAnalyzer$1.onLineAvailable(GitStandardProgressAnalyzer.java:45) 
+2019-10-30 20:36:29,644 [ 191083]   INFO -  #git4idea.commands.GitHandler - Counting objects: 100% (7/7), done. 
+2019-10-30 20:36:29,644 [ 191083]   INFO -  #git4idea.commands.GitHandler - Delta compression using up to 12 threads 
+2019-10-30 20:36:29,645 [ 191084]   INFO -  #git4idea.commands.GitHandler - Compressing objects: 100% (4/4), done. 
+2019-10-30 20:36:29,646 [ 191085]   INFO -  #git4idea.commands.GitHandler - Writing objects: 100% (4/4), 490 bytes | 490.00 KiB/s, done. 
+2019-10-30 20:36:29,646 [ 191085]   INFO -  #git4idea.commands.GitHandler - Total 4 (delta 2), reused 0 (delta 0) 
+2019-10-30 20:36:30,070 [ 191509]   INFO -  #git4idea.commands.GitHandler - remote: Resolving deltas: 100% (2/2), completed with 2 local objects. 
+2019-10-30 20:36:32,057 [ 193496]   INFO -  #git4idea.commands.GitHandler - To https://github.com/Inonut/Docker.git 
+2019-10-30 20:36:32,059 [ 193498]   INFO -  #git4idea.commands.GitHandler - refs/heads/master:refs/heads/master	8024b1f..986032e 
+2019-10-30 20:36:32,059 [ 193498]   INFO -  #git4idea.commands.GitHandler - Done 
+2019-10-30 20:36:32,060 [ 193499]   INFO -  #git4idea.commands.GitHandler - git push took 17373 ms. Command parameters: 
+setsid /usr/bin/git -c credential.helper= -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/master:master 
+2019-10-30 20:36:37,591 [ 199030]   WARN - ConfigurableExtensionPointUtil - ignore deprecated groupId: language for id: preferences.language.Kotlin.scripting 
+2019-10-30 20:36:50,136 [ 211575]   INFO - rationStore.ComponentStoreImpl - Saving appXmlEditorOptions took 12 ms 
+2019-10-30 20:36:50,221 [ 211660]   INFO - mponents.impl.stores.StoreUtil - saveProjectsAndApp took 154 ms 

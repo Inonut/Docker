@@ -4,5 +4,7 @@
     <location key="WELCOME_SCREEN.0.0.1920.1080" x="959" y="440" />
     <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="659" y="352" />
     <location key="SettingsEditor.0.0.1920.1080" x="453" y="159" />
+    <location key="CommitChangelistDialog2.0.0.1920.1080" x="573" y="104" />
+    <location key="Vcs.Push.Dialog.0.0.1920.1080" x="644" y="246" />
   </component>
 </application>
