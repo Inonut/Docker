@@ -36,11 +36,13 @@ RUN useradd --create-home --key MAIL_DIR=/dev/null --shell /bin/bash $USERNAME &
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 ENV JDK_HOME  /usr/lib/jvm/java-1.8-openjdk
 ENV JAVA_EXE  /usr/lib/jvm/java-1.8-openjdk/bin/java
+ENV PS1  "\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$ \[\033[00m\]"
+ENV PATH  "$PATH:$(yarn global bin)"
 
 USER $USERNAME
 WORKDIR /home/$USERNAME
 
-RUN echo 'export PS1="\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$ \[\033[00m\]"' | sudo tee -a ~/.bashrc && \
-    echo 'export PATH="$PATH:$(yarn global bin)"' | sudo tee -a ~/.bashrc
+COPY .IntelliJIdea2019.2 .IntelliJIdea2019.2
+RUN sudo chmod -R ugo+rwx .IntelliJIdea2019.2
 
 CMD /idea-IU-192.7142.36/bin/idea.sh
