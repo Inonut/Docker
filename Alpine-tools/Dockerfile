@@ -2,7 +2,9 @@ FROM alpine
 
 RUN apk --no-cache --update add \
 	# basic packages
-		bash bash-completion coreutils file grep openssl openssh nano sudo tar xz libsecret libsecret-dev dbus dbus-x11 \
+		bash bash-completion coreutils file grep openssl openssh nano sudo tar xz \
+	# credentiuals
+	    libsecret libsecret-dev dbus dbus-x11 gnome-keyring \
 	# debug tools
 		gdb musl-dbg strace \
 	# GUI fonts
@@ -38,6 +40,9 @@ ENV JDK_HOME  /usr/lib/jvm/java-1.8-openjdk
 ENV JAVA_EXE  /usr/lib/jvm/java-1.8-openjdk/bin/java
 ENV PS1  "\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$ \[\033[00m\]"
 ENV PATH  "$PATH:$(yarn global bin)"
+
+RUN export $(dbus-launch) && \
+    gnome-keyring-daemon --start --daemonize --components=secrets
 
 USER $USERNAME
 WORKDIR /home/$USERNAME

@@ -10,7 +10,8 @@ function runIdea() {
   mkdir -p ~/Projects
   
   echo "Run tools"
-  docker run -it --rm -e DISPLAY=:0 \
+  docker run -it --rm --privileged
+    -e DISPLAY=:0 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ~/Projects:/home/developer/IdeaProjects \
     draducanu/idea
