@@ -2,7 +2,7 @@ FROM alpine
 
 RUN apk --no-cache --update add \
 	# basic packages
-		bash bash-completion coreutils file grep openssl openssh nano sudo tar xz libsecret libsecret-dev dbus \
+		bash bash-completion coreutils file grep openssl openssh nano sudo tar xz libsecret libsecret-dev dbus dbus-x11 \
 	# debug tools
 		gdb musl-dbg strace \
 	# GUI fonts
