@@ -25,7 +25,8 @@ RUN yarn global add @angular/cli && \
 ARG IDEA_VERSION=2019.2.4-no-jbr
 RUN wget https://download.jetbrains.com/idea/ideaIU-$IDEA_VERSION.tar.gz && \
 	tar -xf ideaIU-$IDEA_VERSION.tar.gz && \
-	rm ideaIU-$IDEA_VERSION.tar.gz
+	rm ideaIU-$IDEA_VERSION.tar.gz && \
+    mv idea-IU-* idea-IU
 
 # Install tool to list secrets
 RUN wget https://gitlab.com/GrantMoyer/lssecret/-/archive/master/lssecret-master.tar.gz && \
@@ -43,7 +44,6 @@ RUN useradd --create-home --key MAIL_DIR=/dev/null --shell /bin/bash $USER && \
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 ENV JDK_HOME  /usr/lib/jvm/java-1.8-openjdk
 ENV JAVA_EXE  /usr/lib/jvm/java-1.8-openjdk/bin/java
-ENV PS1  "\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$ \[\033[00m\]"
 ENV PATH  "$PATH:$(yarn global bin)"
 
 USER $USER
