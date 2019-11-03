@@ -10,7 +10,7 @@ function runIdea() {
   mkdir -p ~/Projects
   
   echo "Run tools"
-  docker run -it --rm --privileged
+  docker run -it --rm --privileged \
     -e DISPLAY=:0 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ~/Projects:/home/developer/IdeaProjects \
@@ -18,8 +18,9 @@ function runIdea() {
 }
 
 function exportIdeaConfig() {
-  root=~/IdeaProjects/Docker/Alpine-tools/
-  cp -fr ~/.IntelliJIdea2019.2/ "$root"
+  root=~/IdeaProjects/Docker/Alpine-tools/.IntelliJIdea2019.2
+  mkdir -p "$root"
+  cp -fr ~/.IntelliJIdea2019.2/config "$root"/config
 
   eval=$(find "$root" -iname eval 2>/dev/null | grep -e \..*/config/eval)
   rm -fr "$eval"
