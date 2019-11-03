@@ -46,15 +46,8 @@ ENV JAVA_EXE  /usr/lib/jvm/java-1.8-openjdk/bin/java
 ENV PS1  "\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$ \[\033[00m\]"
 ENV PATH  "$PATH:$(yarn global bin)"
 
-RUN git config --global user.email "you@example.com" && \
-    git config --global user.name "Docker Dev" && \
-    git config --global credential.helper libsecretv
-
 USER $USER
 WORKDIR /home/$USER
-
-# COPY .IntelliJIdea2019.2 .IntelliJIdea2019.2
-# RUN sudo chmod -R ugo+rwx .IntelliJIdea2019.2
 
 # Install "seahorse" to generate keyrings with passward "\n"
 COPY keyrings .local/share/keyrings
@@ -62,6 +55,9 @@ RUN sudo chmod -R ugo+rwx .local/share/keyrings
 
 COPY .bashrc .bashrc
 RUN sudo chmod -R ugo+rwx .bashrc
+
+COPY .gitconfig .gitconfig
+RUN sudo chmod -R ugo+rwx .gitconfig
 
 COPY startup.sh startup.sh
 RUN sudo chmod -R ugo+rwx startup.sh

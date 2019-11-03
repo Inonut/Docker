@@ -12,6 +12,9 @@ function runIdea() {
   echo "Run tools"
   docker run -it --rm --privileged \
     -e DISPLAY=:0 \
+    -e GIT_USER=Inonut \
+    -e GIT_TOKEN=$DOCKER_GIT_ACCESS_TOKEN \
+    -e GIT_IDEA_SETTINGS=idea-settings \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ~/Projects:/home/developer/IdeaProjects \
     draducanu/idea
