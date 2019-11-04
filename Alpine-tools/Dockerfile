@@ -13,6 +13,8 @@ RUN apk --no-cache --update add \
 		shadow \
 	# C++ build tools
 		cmake g++ git linux-headers libpthread-stubs make \
+	# Python
+	    py2-pip \
 	# Java tools
 		gradle openjdk8 openjdk8-dbg \
     # Web tools
@@ -61,6 +63,9 @@ RUN sudo chmod -R ugo+rwx .gitconfig
 
 COPY startup.sh startup.sh
 RUN sudo chmod -R ugo+rwx startup.sh
+
+COPY idea-settings .IntelliJIdea2019.2
+RUN sudo chmod -R ugo+rwx .IntelliJIdea2019.2
 
 ENTRYPOINT ~/startup.sh
 

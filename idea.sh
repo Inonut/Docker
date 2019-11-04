@@ -1,5 +1,9 @@
 #!/bin/bash
 
+GIT_IDEA_SETTINGS=idea-settings
+GIT_USER=Inonut
+GIT_TOKEN=$DOCKER_GIT_ACCESS_TOKEN
+
 function buildAlpineTools() {
   docker build ./Alpine-tools -t draducanu/idea
   docker push draducanu/idea
@@ -12,9 +16,9 @@ function runIdea() {
   echo "Run tools"
   docker run -it --rm --privileged \
     -e DISPLAY=:0 \
-    -e GIT_USER=Inonut \
-    -e GIT_TOKEN=$DOCKER_GIT_ACCESS_TOKEN \
-    -e GIT_IDEA_SETTINGS=idea-settings \
+    -e GIT_USER=$GIT_USER \
+    -e GIT_TOKEN=$GIT_TOKEN \
+    -e GIT_IDEA_SETTINGS=$GIT_IDEA_SETTINGS \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ~/Projects:/home/developer/IdeaProjects \
     draducanu/idea
@@ -27,9 +31,9 @@ function runWin() {
   echo "Run tools"
   docker run -it --rm --privileged \
     -e DISPLAY=$(ip route get 1 | awk '{print $NF;exit}'):0.0 \
-    -e GIT_USER=Inonut \
-    -e GIT_TOKEN=$DOCKER_GIT_ACCESS_TOKEN \
-    -e GIT_IDEA_SETTINGS=idea-settings \
+    -e GIT_USER=$GIT_USER \
+    -e GIT_TOKEN=$GIT_TOKEN \
+    -e GIT_IDEA_SETTINGS=$GIT_IDEA_SETTINGS \
     -v d:/PROJECTS:/home/developer/IdeaProjects \
     draducanu/idea
 }
@@ -49,12 +53,19 @@ function exportIdeaConfig() {
   sed -i.bak '/evlsprt*/d' "$option"
 }
 
+CURRENT_PATH=$(pwd)
+cd Alpine-tools
+if [ ! -d "$GIT_IDEA_SETTINGS" ]; then
+  git clone https://$GIT_TOKEN@github.com/$GIT_USER/$GIT_IDEA_SETTINGS.git
+else
+  cd $GIT_IDEA_SETTINGS
+  git pull
+fi
+cd $CURRENT_PATH
+
 case $1 in
-   "build")
-      buildAlpineTools
-      ;;
+    "build") buildAlpineTools;;
     "export") exportIdeaConfig;;
     "win") runWin;;
-   *) runIdea;;
+    *) runIdea;;
 esac
-
