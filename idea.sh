@@ -20,6 +20,20 @@ function runIdea() {
     draducanu/idea
 }
 
+function runWin() {
+  echo "Create 'Project' dir if not exist"
+  mkdir -p ~/Projects
+
+  echo "Run tools"
+  docker run -it --rm --privileged \
+    -e DISPLAY=$(ip route get 1 | awk '{print $NF;exit}'):0.0 \
+    -e GIT_USER=Inonut \
+    -e GIT_TOKEN=$DOCKER_GIT_ACCESS_TOKEN \
+    -e GIT_IDEA_SETTINGS=idea-settings \
+    -v d:/PROJECTS:/home/developer/IdeaProjects \
+    draducanu/idea
+}
+
 function exportIdeaConfig() {
   root=~/IdeaProjects/Docker/Alpine-tools/.IntelliJIdea2019.2
   mkdir -p "$root"
@@ -40,6 +54,7 @@ case $1 in
       buildAlpineTools
       ;;
     "export") exportIdeaConfig;;
+    "win") runWin;;
    *) runIdea;;
 esac
 
