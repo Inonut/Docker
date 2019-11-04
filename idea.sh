@@ -12,7 +12,9 @@ function buildAlpineTools() {
 function runIdea() {
   echo "Create 'Project' dir if not exist"
   mkdir -p ~/Projects
-  
+
+  docker volume create idea-settings
+
   echo "Run tools"
   docker run -it --rm --privileged \
     -e DISPLAY=:0 \
@@ -52,16 +54,6 @@ function exportIdeaConfig() {
   option=$(find "$root" -iname 'other.xml' 2>/dev/null | grep -e \..*/config/options/other\.xml)
   sed -i.bak '/evlsprt*/d' "$option"
 }
-
-CURRENT_PATH=$(pwd)
-cd Alpine-tools
-if [ ! -d "$GIT_IDEA_SETTINGS" ]; then
-  git clone https://$GIT_TOKEN@github.com/$GIT_USER/$GIT_IDEA_SETTINGS.git
-else
-  cd $GIT_IDEA_SETTINGS
-  git pull
-fi
-cd $CURRENT_PATH
 
 case $1 in
     "build") buildAlpineTools;;

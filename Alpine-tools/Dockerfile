@@ -2,7 +2,7 @@ FROM alpine:edge
 
 RUN apk --no-cache --update add \
 	# basic packages
-		bash bash-completion coreutils file grep openssl openssh nano sudo tar xz \
+		bash bash-completion coreutils file grep openssl openssh nano sudo tar xz procps \
 	# credentiuals
 	    libsecret libsecret-dev dbus-x11 gnome-keyring \
 	# debug tools
@@ -63,9 +63,6 @@ RUN sudo chmod -R ugo+rwx .gitconfig
 
 COPY startup.sh startup.sh
 RUN sudo chmod -R ugo+rwx startup.sh
-
-COPY idea-settings .IntelliJIdea2019.2
-RUN sudo chmod -R ugo+rwx .IntelliJIdea2019.2
 
 ENTRYPOINT ~/startup.sh
 
