@@ -1,74 +1,77 @@
 FROM archlinux/base
 
-ARG DOCKER_USER=idea
-
 COPY mirrorlist /etc/pacman.d/mirrorlist
 
-# update
-RUN pacman -Sy \
-    && pacman --noconfirm -S sudo nano \
-# add user
-    && useradd -m -G wheel -s /bin/bash $DOCKER_USER \
-	&& passwd -d $DOCKER_USER \
-	&& echo "$DOCKER_USER ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$DOCKER_USER \
-	&& chown -R $DOCKER_USER /home/$DOCKER_USER
+RUN pacman -Sy && \
+    pacman --noconfirm -S \
+	# basic packages
+		bash bash-completion coreutils file grep openssl openssh nano sudo tar xz procps wget pkgconf base-devel \
+	# credentiuals
+	    libsecret gnome-keyring \
+	# debug tools
+		gdb strace \
+	# GUI fonts
+		noto-fonts \
+	# user utils
+		shadow \
+	# C++ build tools
+		cmake gcc git linux-headers glibc make \
+	# Python
+	    python-pip python \
+	# Java tools
+		gradle jdk8-openjdk \
+    # Web tools
+        yarn nodejs
 
-# change user
-USER $DOCKER_USER
+RUN yarn global add @angular/cli && \
+    $(yarn global bin)/ng config -g cli.packageManager yarn
 
-# change dir to user dir
-WORKDIR /home/$DOCKER_USER
+# Install IntelliJ Ultimate
+ARG IDEA_VERSION=2019.2.4-no-jbr
+RUN wget https://download.jetbrains.com/idea/ideaIU-$IDEA_VERSION.tar.gz && \
+	tar -xf ideaIU-$IDEA_VERSION.tar.gz && \
+	rm ideaIU-$IDEA_VERSION.tar.gz && \
+    mv idea-IU-* idea-IU
 
-RUN sudo pacman --noconfirm -S base-devel libxrender gtk3
+# Install tool to list secrets
+RUN wget https://gitlab.com/GrantMoyer/lssecret/-/archive/master/lssecret-master.tar.gz && \
+    tar -xf lssecret-master.tar.gz && \
+    make -C lssecret-master install
 
-RUN sudo pacman --noconfirm -S git
+# Create a new user with no password
+ENV USER developer
+RUN useradd -m -G wheel -s /bin/bash $USER && \
+	passwd -d $USER && \
+	echo "$USER ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$USER && \
+	chown -R $USER /home/$USER
 
-RUN git clone https://aur.archlinux.org/yay.git \
-    && cd yay \
-    && makepkg --noconfirm -si \
-    && cd .. \
-    && rm -fr yay
+RUN dbus-uuidgen > /var/lib/dbus/machine-id
 
-#RUN yay --noconfirm -S ttf-dejavu ttf-liberation noto-fonts \
-#    && sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d \
-#    && sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d \
-#    && sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d \
-#    && echo 'export FREETYPE_PROPERTIES="truetype:interpreter-version=40"' | sudo tee -a /etc/profile.d/freetype2.sh \
-#    && echo '<?xml version="1.0"?>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '<!DOCTYPE fontconfig SYSTEM "fonts.dtd">' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '<fontconfig>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '   <match>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '       <edit mode="prepend" name="family"><string>Noto Sans</string></edit>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '   </match>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '   <match target="pattern">' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '       <test qual="any" name="family"><string>serif</string></test>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '       <edit name="family" mode="assign" binding="same"><string>Noto Serif</string></edit>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '   </match>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '   <match target="pattern">' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '       <test qual="any" name="family"><string>sans-serif</string></test>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '       <edit name="family" mode="assign" binding="same"><string>Noto Sans</string></edit>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '   </match>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '   <match target="pattern">' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '       <test qual="any" name="family"><string>monospace</string></test>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '       <edit name="family" mode="assign" binding="same"><string>Noto Mono</string></edit>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '   </match>' | sudo tee -a /etc/fonts/local.conf \
-#    && echo '</fontconfig>' | sudo tee -a /etc/fonts/local.conf
+# Set additional environment variables
+ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
+ENV JDK_HOME  /usr/lib/jvm/java-1.8-openjdk
+ENV JAVA_EXE  /usr/lib/jvm/java-1.8-openjdk/bin/java
+ENV PATH  "$PATH:$(yarn global bin)"
 
-RUN yay --noconfirm -S jdk-openjdk \
-    && sudo archlinux-java set java-13-openjdk
+USER $USER
+WORKDIR /home/$USER
 
-RUN yay --noconfirm -S intellij-idea-ultimate-edition
-COPY .IntelliJIdea2019.2 .IntelliJIdea2019.2
-RUN sudo chmod -R ugo+rwx .IntelliJIdea2019.2
+# Install aur dbus-x11
+RUN git clone https://aur.archlinux.org/dbus-x11.git && \
+    cd dbus-x11 && \
+    yes | makepkg -si
 
-RUN yay --noconfirm -S yarn \
-    && echo 'export PATH="$PATH:$(yarn global bin)"' | sudo tee -a ~/.bashrc
+# Install "seahorse" to generate keyrings with passward "\n"
+COPY keyrings .local/share/keyrings
+RUN sudo chmod -R ugo+rwx .local/share/keyrings
 
-RUN yarn global add @angular/cli \
-    && $(yarn global bin)/ng config -g cli.packageManager yarn
+COPY .bashrc .bashrc
+RUN sudo chmod -R ugo+rwx .bashrc
 
-RUN yay --noconfirm -S python python-pip
+COPY .gitconfig .gitconfig
+RUN sudo chmod -R ugo+rwx .gitconfig
 
-RUN yay --noconfirm -S git
+COPY startup.sh startup.sh
+RUN sudo chmod -R ugo+rwx startup.sh
 
-CMD [ "/opt/intellij-idea-ultimate-edition/bin/idea.sh" ]
+ENTRYPOINT ~/startup.sh
