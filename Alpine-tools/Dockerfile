@@ -42,6 +42,8 @@ RUN useradd --create-home --key MAIL_DIR=/dev/null --shell /bin/bash $USER && \
 	echo "$USER ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$USER && \
 	chown -R $USER /home/$USER
 
+RUN dbus-uuidgen > /var/lib/dbus/machine-id
+
 # Set additional environment variables
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 ENV JDK_HOME  /usr/lib/jvm/java-1.8-openjdk
