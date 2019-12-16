@@ -65,5 +65,3 @@ COPY startup.sh startup.sh
 RUN sudo chmod -R ugo+rwx startup.sh
 
 ENTRYPOINT ~/startup.sh
-
-
