@@ -24,7 +24,7 @@ RUN yarn global add @angular/cli && \
     $(yarn global bin)/ng config -g cli.packageManager yarn
 
 # Install IntelliJ Ultimate
-ARG IDEA_VERSION=2019.2.4-no-jbr
+ENV IDEA_VERSION=2019.3-no-jbr
 RUN wget https://download.jetbrains.com/idea/ideaIU-$IDEA_VERSION.tar.gz && \
 	tar -xf ideaIU-$IDEA_VERSION.tar.gz && \
 	rm ideaIU-$IDEA_VERSION.tar.gz && \
