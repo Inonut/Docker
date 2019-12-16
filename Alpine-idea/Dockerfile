@@ -1,0 +1,2 @@
+FROM draducanu/alpine-idea
+
