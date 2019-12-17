@@ -5,4 +5,4 @@ RUN wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flut
 	tar -xf flutter_linux_$FLUTTER_VERSION.tar.xz && \
 	rm flutter_linux_$FLUTTER_VERSION.tar.xz
 
-ENV PATH  "$PATH:~/flutter/bin"
+ENV PATH "$PATH:~/flutter/bin"
