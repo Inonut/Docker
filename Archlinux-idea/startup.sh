@@ -16,9 +16,9 @@
 #  cd $CURRENT_PATH
 #fi
 
-IDEA_SHORT_VERSION=$(echo $IDEA_VERSION | awk -F"[\.\-]" '{ print $1}').$(echo $IDEA_VERSION | awk -F"[\.\-]" '{ print $2}')
-mkdir -p .IntelliJIdea$IDEA_SHORT_VERSION
-sudo chmod -R ugo+rwx .IntelliJIdea$IDEA_SHORT_VERSION
+#IDEA_SHORT_VERSION=$(echo $IDEA_VERSION | awk -F"[\.\-]" '{ print $1}').$(echo $IDEA_VERSION | awk -F"[\.\-]" '{ print $2}')
+#mkdir -p .IntelliJIdea$IDEA_SHORT_VERSION
+#sudo chmod -R ugo+rwx .IntelliJIdea$IDEA_SHORT_VERSION
 
 /idea-IU/bin/idea.sh
 #sudo cp -r ~/IdeaProjects/. ~/Projects/

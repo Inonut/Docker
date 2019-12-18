@@ -5,7 +5,7 @@ COPY mirrorlist /etc/pacman.d/mirrorlist
 RUN pacman -Sy && \
     pacman --noconfirm -S \
 	# basic packages
-		bash bash-completion openssl openssh nano sudo tar wget make pkgconf base-devel ncdu \
+		bash bash-completion openssl openssh nano sudo tar wget make pkgconf base-devel ncdu procps iputils \
 	# credentiuals
 	    libsecret gnome-keyring \
 	# GUI fonts
