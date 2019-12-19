@@ -12,14 +12,14 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-$ANDROID_VERSI
 	unzip sdk-tools-linux-$ANDROID_VERSION.zip && \
 	rm sdk-tools-linux-$ANDROID_VERSION.zip
 
-RUN mkdir -p ./Android/Sdk && \
+RUN mkdir -p ~/Android/Sdk && \
     yes | ~/tools/bin/sdkmanager --install "build-tools;29.0.2" "system-images;android-29;google_apis_playstore;x86_64" "platform-tools" "sources;android-29" "platforms;android-29" && \
-    mv ~/build-tools ./Android/Sdk/build-tools && \
-    mv ~/emulator ./Android/Sdk/emulator && \
-    mv ~/patcher ./Android/Sdk/patcher && \
-    mv ~/platforms ./Android/Sdk/platforms && \
-    mv ~/platform-tools ./Android/Sdk/platform-tools && \
-    mv ~/sources ./Android/Sdk/sources && \
-	mv ~/tools ./Android/Sdk/tools
+    mv ~/build-tools ~/Android/Sdk/build-tools && \
+    mv ~/emulator ~/Android/Sdk/emulator && \
+    mv ~/patcher ~/Android/Sdk/patcher && \
+    mv ~/platforms ~/Android/Sdk/platforms && \
+    mv ~/platform-tools ~/Android/Sdk/platform-tools && \
+    mv ~/sources ~/Android/Sdk/sources && \
+	mv ~/tools ~/Android/Sdk/tools
 
 ENV PATH "$PATH:~/flutter/bin"
