@@ -5,7 +5,7 @@ COPY mirrorlist /etc/pacman.d/mirrorlist
 RUN pacman -Sy && \
     pacman --noconfirm -S \
 	# basic packages
-		bash bash-completion openssl openssh nano sudo tar wget make pkgconf base-devel ncdu procps iputils \
+		bash bash-completion openssl openssh nano sudo tar wget make pkgconf base-devel ncdu procps iputils unzip \
 	# credentiuals
 	    libsecret gnome-keyring \
 	# GUI fonts
@@ -15,7 +15,7 @@ RUN pacman -Sy && \
 	# C++ build tools
 		cmake gcc git linux-headers glibc make \
 	# Java
-	    jdk-openjdk
+	    jdk8-openjdk
 
 # Install IntelliJ Ultimate
 ARG IDEA_VERSION=2019.3-no-jbr
