@@ -12,8 +12,9 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-$ANDROID_VERSI
 	unzip sdk-tools-linux-$ANDROID_VERSION.zip && \
 	rm sdk-tools-linux-$ANDROID_VERSION.zip
 
+ENV ANDROID_VERSION=29
 RUN mkdir -p ~/Android/Sdk && \
-    yes | ~/tools/bin/sdkmanager --install "build-tools;29.0.2" "system-images;android-29;google_apis_playstore;x86_64" "platform-tools" "sources;android-29" "platforms;android-29" && \
+    yes | ~/tools/bin/sdkmanager --install "build-tools;$ANDROID_VERSION.0.2" "system-images;android-$ANDROID_VERSION;google_apis_playstore;x86_64" "platform-tools" "sources;android-$ANDROID_VERSION" "platforms;android-$ANDROID_VERSION" && \
     mv ~/build-tools ~/Android/Sdk/build-tools && \
     mv ~/emulator ~/Android/Sdk/emulator && \
     mv ~/patcher ~/Android/Sdk/patcher && \
