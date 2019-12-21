@@ -1,4 +1,4 @@
-FROM archlinux/base
+FROM archlinux
 
 COPY mirrorlist /etc/pacman.d/mirrorlist
 
@@ -17,17 +17,17 @@ RUN pacman -Sy && \
 	# Java
 	    jdk8-openjdk
 
-# Install IntelliJ Ultimate
-ARG IDEA_VERSION=2019.3-no-jbr
-RUN wget https://download.jetbrains.com/idea/ideaIU-$IDEA_VERSION.tar.gz && \
-	tar -xf ideaIU-$IDEA_VERSION.tar.gz && \
-	rm ideaIU-$IDEA_VERSION.tar.gz && \
-    mv idea-IU-* idea-IU
-
 # Install tool to list secrets
 RUN wget https://gitlab.com/GrantMoyer/lssecret/-/archive/master/lssecret-master.tar.gz && \
     tar -xf lssecret-master.tar.gz && \
     make -C lssecret-master install
+
+# Install IntelliJ Ultimate
+ARG IDEA_VERSION=2019.3.1-no-jbr
+RUN wget https://download.jetbrains.com/idea/ideaIU-$IDEA_VERSION.tar.gz && \
+	tar -xf ideaIU-$IDEA_VERSION.tar.gz && \
+	rm ideaIU-$IDEA_VERSION.tar.gz && \
+    mv idea-IU-* idea-IU
 
 # Create a new user with no password
 ENV USER developer
