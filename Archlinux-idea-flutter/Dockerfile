@@ -15,6 +15,6 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-$ANDROID_VERSI
 
 ARG ANDROID_VERSION=28
 RUN yes | tools/bin/sdkmanager --install "build-tools;$ANDROID_VERSION.0.3" "platform-tools" "sources;android-$ANDROID_VERSION" "platforms;android-$ANDROID_VERSION"
-RUN yes | ~/flutter/bin/flutter doctor --android-licenses
+RUN yes | ~/flutter/bin/flutter doctor --android-licenses && ~/flutter/bin/flutter config --enable-web
 
 ENV PATH "$PATH:~/flutter/bin:~/Android/Sdk/platform-tools"
