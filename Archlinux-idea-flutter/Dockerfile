@@ -8,10 +8,10 @@ RUN wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flut
 RUN mkdir -p ~/Android/Sdk
 WORKDIR /home/$USER/Android/Sdk
 
-ARG ANDROID_VERSION=4333796
-RUN wget https://dl.google.com/android/repository/sdk-tools-linux-$ANDROID_VERSION.zip && \
-	unzip sdk-tools-linux-$ANDROID_VERSION.zip && \
-	rm sdk-tools-linux-$ANDROID_VERSION.zip
+ARG ANDROID_TOOLS_VERSION=4333796
+RUN wget https://dl.google.com/android/repository/sdk-tools-linux-$ANDROID_TOOLS_VERSION.zip && \
+	unzip sdk-tools-linux-$ANDROID_TOOLS_VERSION.zip && \
+	rm sdk-tools-linux-$ANDROID_TOOLS_VERSION.zip
 
 ARG ANDROID_VERSION=28
 RUN yes | tools/bin/sdkmanager --install "build-tools;$ANDROID_VERSION.0.3" "platform-tools" "sources;android-$ANDROID_VERSION" "platforms;android-$ANDROID_VERSION"
@@ -22,3 +22,5 @@ RUN yes | ~/flutter/bin/flutter doctor --android-licenses && \
     ~/flutter/bin/flutter devices
 
 ENV PATH "$PATH:~/flutter/bin:~/Android/Sdk/platform-tools"
+
+RUN sudo pacman --noconfirm -Sy chromium
