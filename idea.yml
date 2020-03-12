@@ -4,31 +4,28 @@
   vars:
     idea_image: "draducanu/arch-idea"
     idea_container: "idea-container"
-
-    idea_flutter_image: "draducanu/arch-idea-flutter"
-    idea_flutter_container: "idea-flutter-container"
   tasks:
+    - name: build idea image
+        docker_image:
+          name: "{{idea_image}}"
+          source: build
+          push: yes
+          rm: no
+          force_source: true
+          build:
+            pull: no
+            path: "./Archlinux-idea"
+            args:
+              IDEA_VERSION: 2019.3.3-no-jbr
 
     - name: open idea
       docker_container:
         name: "{{idea_container}}"
         image: "{{idea_image}}"
-        pull: false
+        pull: true
         env:
           DISPLAY: ":0"
         volumes:
           - /tmp/.X11-unix:/tmp/.X11-unix
           - ~/IdeaProjects:/home/developer/IdeaProjects
           - ~/IdeaProjects/libs:/home/developer/libs
-
-#    - name: open idea flutter
-#      docker_container:
-#        name: "{{idea_flutter_container}}"
-#        image: "{{idea_flutter_image}}"
-#        pull: true
-#        env:
-#          DISPLAY: ":0"
-#        volumes:
-#          - /tmp/.X11-unix:/tmp/.X11-unix
-#          - ~/IdeaProjects:/home/developer/IdeaProjects
-#          - ~/IdeaProjects/idea-settings:/home/developer/.IntelliJIdea2019.3

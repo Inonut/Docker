@@ -15,7 +15,7 @@ RUN pacman -Sy && \
 	# C++ build tools
 		cmake gcc git linux-headers glibc make \
 	# Java
-	    jdk8-openjdk
+	    jdk-openjdk
 
 # Install tool to list secrets
 RUN wget https://gitlab.com/GrantMoyer/lssecret/-/archive/master/lssecret-master.tar.gz && \
@@ -23,7 +23,7 @@ RUN wget https://gitlab.com/GrantMoyer/lssecret/-/archive/master/lssecret-master
     make -C lssecret-master install
 
 # Install IntelliJ Ultimate
-ARG IDEA_VERSION=2019.3.1-no-jbr
+ARG IDEA_VERSION=2019.3.3-no-jbr
 RUN wget https://download.jetbrains.com/idea/ideaIU-$IDEA_VERSION.tar.gz && \
 	tar -xf ideaIU-$IDEA_VERSION.tar.gz && \
 	rm ideaIU-$IDEA_VERSION.tar.gz && \
@@ -39,7 +39,7 @@ RUN useradd -m -G wheel -s /bin/bash $USER && \
 RUN dbus-uuidgen > /var/lib/dbus/machine-id
 
 # Set additional environment variables
-ENV PATH  "$PATH:$(yarn global bin)"
+#ENV PATH  "$PATH:$(yarn global bin)"
 
 USER $USER
 WORKDIR /home/$USER
