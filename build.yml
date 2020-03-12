@@ -1,0 +1,32 @@
+---
+- name: install arch linux
+  hosts: localhost
+  vars:
+    idea_image: "draducanu/arch-idea"
+    idea_container: "idea-container"
+
+    idea_flutter_image: "draducanu/arch-idea-flutter"
+    idea_flutter_container: "idea-flutter-container"
+  tasks:
+
+    - name: build idea image
+      docker_image:
+        name: "{{idea_image}}"
+        source: build
+        push: yes
+        build:
+          pull: no
+          path: "./Archlinux-idea"
+          args:
+            IDEA_VERSION: 2019.3.3-no-jbr
+
+    - name: build idea flutter image
+      docker_image:
+        name: "{{idea_flutter_image}}"
+        source: build
+        push: yes
+        build:
+          pull: no
+          path: "./Archlinux-idea-flutter"
+          args:
+            FLUTTER_VERSION: v1.12.13+hotfix.8-stable
