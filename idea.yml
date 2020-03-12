@@ -6,17 +6,17 @@
     idea_container: "idea-container"
   tasks:
     - name: build idea image
-        docker_image:
-          name: "{{idea_image}}"
-          source: build
-          push: yes
-          rm: no
-          force_source: true
-          build:
-            pull: no
-            path: "./Archlinux-idea"
-            args:
-              IDEA_VERSION: 2019.3.3-no-jbr
+      docker_image:
+        name: "{{idea_image}}"
+        source: build
+        push: yes
+        rm: no
+        force_source: true
+        build:
+          pull: no
+          path: "./Archlinux-idea"
+          args:
+            IDEA_VERSION: 2019.3.3-no-jbr
 
     - name: open idea
       docker_container:
