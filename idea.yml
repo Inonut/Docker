@@ -10,9 +10,9 @@
         name: "{{idea_image}}"
         source: build
         push: yes
-        rm: no
         force_source: true
         build:
+          rm: no
           pull: no
           path: "./Archlinux-idea"
           args:
