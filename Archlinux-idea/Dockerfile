@@ -33,14 +33,15 @@ RUN wget https://download.jetbrains.com/idea/ideaIU-$IDEA_VERSION.tar.gz && \
 ENV USER developer
 RUN useradd -m -G wheel -s /bin/bash $USER && \
 	passwd -d $USER && \
-	echo "$USER ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$USER && \
-	chown -R $USER /home/$USER
+	echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+	echo "Set disable_coredump false" > /etc/sudo.conf
 
 RUN dbus-uuidgen > /var/lib/dbus/machine-id
 
 # Set additional environment variables
 #ENV PATH  "$PATH:$(yarn global bin)"
 
+USER $USER
 WORKDIR /home/$USER
 
 # Install aur dbus-x11
@@ -61,6 +62,9 @@ COPY .gitconfig .gitconfig
 RUN sudo chmod -R ugo+rwx .gitconfig
 
 COPY startup.sh startup.sh
+RUN sudo chmod -R ugo+rwx startup.sh
+
+COPY idea-conf .IntelliJIdea
 RUN sudo chmod -R ugo+rwx startup.sh
 
 ENTRYPOINT ~/startup.sh
