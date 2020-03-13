@@ -1,4 +1,4 @@
-FROM archlinux
+FROM archlinux/base
 
 COPY mirrorlist /etc/pacman.d/mirrorlist
 
@@ -15,7 +15,7 @@ RUN pacman -Sy && \
 	# C++ build tools
 		cmake gcc git linux-headers glibc make \
 	# Java
-	    jdk8-openjdk
+	    jdk-openjdk
 
 # Install tool to list secrets
 RUN wget https://gitlab.com/GrantMoyer/lssecret/-/archive/master/lssecret-master.tar.gz && \
