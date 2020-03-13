@@ -41,13 +41,12 @@ RUN dbus-uuidgen > /var/lib/dbus/machine-id
 # Set additional environment variables
 #ENV PATH  "$PATH:$(yarn global bin)"
 
-USER $USER
 WORKDIR /home/$USER
 
 # Install aur dbus-x11
 RUN git clone https://aur.archlinux.org/dbus-x11.git && \
     cd dbus-x11 && \
-    yes | makepkg -si && \
+    yes | sudo -u $USER makepkg -si && \
     cd .. && \
     rm -fr dbus-x11
 
