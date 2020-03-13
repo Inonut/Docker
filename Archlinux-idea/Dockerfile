@@ -15,7 +15,7 @@ RUN pacman -Sy && \
 	# C++ build tools
 		cmake gcc git linux-headers glibc make \
 	# Java
-	    jdk-openjdk
+	    jdk8-openjdk
 
 # Install tool to list secrets
 RUN wget https://gitlab.com/GrantMoyer/lssecret/-/archive/master/lssecret-master.tar.gz && \
