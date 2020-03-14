@@ -3,8 +3,8 @@
 # asume that you already have docker installed
 
 # install ansible if not present
-sudo pacman --noconfirm -Sy ansible python python-pip
-sudo pip install docker
+pacman --noconfirm -Sy ansible python python-pip
+pip install docker
 
 # add idea yml playbook
 mkdir -p ~/.ansible/idea
