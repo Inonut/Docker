@@ -22,6 +22,7 @@ cat <<EOF > ~/.ansible/idea/idea.yml
         name: "{{idea_container}}"
         image: "{{idea_image}}"
         pull: true
+        network_mode: host
         env:
           DISPLAY: ":0"
         volumes:
