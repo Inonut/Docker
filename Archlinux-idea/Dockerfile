@@ -15,7 +15,7 @@ RUN pacman -Sy && \
 	# C++ build tools
 		cmake gcc git linux-headers glibc make \
 	# Java
-	    jdk-openjdk
+	    jdk-openjdk maven npm yarn gradle svn
 
 # Install tool to list secrets
 RUN wget https://gitlab.com/GrantMoyer/lssecret/-/archive/master/lssecret-master.tar.gz && \
@@ -23,7 +23,7 @@ RUN wget https://gitlab.com/GrantMoyer/lssecret/-/archive/master/lssecret-master
     make -C lssecret-master install
 
 # Install IntelliJ Ultimate
-ARG IDEA_VERSION=2019.3.3-no-jbr
+ARG IDEA_VERSION=2019.3.4-no-jbr
 RUN wget https://download.jetbrains.com/idea/ideaIU-$IDEA_VERSION.tar.gz && \
 	tar -xf ideaIU-$IDEA_VERSION.tar.gz && \
 	rm ideaIU-$IDEA_VERSION.tar.gz && \
