@@ -7,6 +7,7 @@ pacman --noconfirm -Sy ansible python python-pip
 pip install docker
 
 # add idea yml playbook
+rm -fr ~/.ansible/idea
 mkdir -p ~/.ansible/idea
 
 cat <<EOF > ~/.ansible/idea/idea.yml
@@ -32,5 +33,5 @@ cat <<EOF > ~/.ansible/idea/idea.yml
 EOF
 
 # add terminal commad
+sed -i '/alias idea/d' ~/.bashrc
 echo "alias idea=\"ansible-playbook ~/.ansible/idea/idea.yml\"" >> ~/.bashrc
-source ~/.bashrc
