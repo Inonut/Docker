@@ -33,7 +33,8 @@ cat <<EOF > ~/.ansible/idea/idea.yml
           - ~/libs:/root/libs
           - ~/.m2:/root/.m2
           - ~/.gradle:/root/.gradle
-          - ~/.local/share/JetBrains :/root/.local/share/JetBrains
+          - ~/.local/share/JetBrains:/root/.local/share/JetBrains
+          - ~/.java/.userPrefs/jetbrains:/root/.java/.userPrefs/jetbrains
 
 EOF
 
