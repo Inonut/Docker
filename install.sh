@@ -28,10 +28,15 @@ cat <<EOF > ~/.ansible/idea/idea.yml
           DISPLAY: ":0"
         volumes:
           - /tmp/.X11-unix:/tmp/.X11-unix
-          - ~/IdeaProjects:/home/developer/IdeaProjects
+          - ~/IdeaProjects:/root/IdeaProjects
+          - ~/.IntelliJIdea2019.3:/root/.IntelliJIdea2019.3
+          - ~/libs:/root/libs
+          - ~/.m2:/root/.m2
+          - ~/.gradle:/root/.gradle
+          - ~/.local/share/JetBrains :/root/.local/share/JetBrains
 
 EOF
 
 # add terminal commad
-sed -i '/alias idea/d' ~/.bashrc
+sed -i '/alias idea=/d' ~/.bashrc
 echo "alias idea=\"ansible-playbook ~/.ansible/idea/idea.yml\"" >> ~/.bashrc

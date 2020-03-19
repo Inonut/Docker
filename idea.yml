@@ -17,7 +17,7 @@
           pull: no
           path: "./Archlinux-idea"
           args:
-            IDEA_VERSION: 2019.3.3-no-jbr
+            IDEA_VERSION: 2019.3.4-no-jbr
       when: "build == true"
 
     - name: open idea
@@ -29,5 +29,9 @@
           DISPLAY: ":0"
         volumes:
           - /tmp/.X11-unix:/tmp/.X11-unix
-          - ~/IdeaProjects:/home/developer/IdeaProjects
-          - ~/IdeaProjects/libs:/home/developer/libs
+          - ~/IdeaProjects:/root/IdeaProjects
+          - ~/.IntelliJIdea2019.3:/root/.IntelliJIdea2019.3
+          - ~/libs:/root/libs
+          - ~/.m2:/root/.m2
+          - ~/.gradle:/root/.gradle
+          - ~/.local/share/JetBrains :/root/.local/share/JetBrains

@@ -530,6 +530,19 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.ahk">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="de.nordgedanken.auto_hotkey" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.al">
       <plugins>
         <option name="myPlugins">
@@ -3059,19 +3072,6 @@
             </plugin>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud2.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.eslintrc">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.wix.eslint" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -5845,6 +5845,19 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.minmapper">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="com.codesmagic.idea.minbatis" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.minmarker">
       <plugins>
         <option name="myPlugins">
@@ -6922,6 +6935,32 @@
           <set>
             <plugin>
               <option name="myPluginId" value="org.intellij.plugins.postcss" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.pdl">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="com.ts.pdt.pdt-intellij-plugin" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.pdlt">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="com.ts.pdt.pdt-intellij-plugin" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -11962,19 +12001,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key=".eslintrc">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.wix.eslint" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key=".flowconfig">
       <plugins>
         <option name="myPlugins">
@@ -12614,19 +12640,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key="eslint.json">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.wix.eslint" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="ext_conf_template.txt">
       <plugins>
         <option name="myPlugins">
@@ -13158,6 +13171,19 @@
             </plugin>
             <plugin>
               <option name="myPluginId" value="org.jetbrains.plugins.ruby" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="wemi">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="com.darkyen.wemi.intellij" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
