@@ -17,6 +17,7 @@ cat <<EOF > ~/.ansible/idea/idea.yml
   vars:
     idea_image: "draducanu/arch-idea"
     idea_container: "idea-container"
+    path: "~/.IntelliJIdea"
   tasks:
     - name: open idea
       docker_container:
@@ -27,14 +28,14 @@ cat <<EOF > ~/.ansible/idea/idea.yml
         env:
           DISPLAY: ":0"
         volumes:
-          - /tmp/.X11-unix:/tmp/.X11-unix
-          - ~/IdeaProjects:/root/IdeaProjects
-          - ~/.IntelliJIdea2019.3:/root/.IntelliJIdea2019.3
-          - ~/libs:/root/libs
-          - ~/.m2:/root/.m2
-          - ~/.gradle:/root/.gradle
-          - ~/.local/share/JetBrains:/root/.local/share/JetBrains
-          - ~/.java/.userPrefs/jetbrains:/root/.java/.userPrefs/jetbrains
+          - "/tmp/.X11-unix:/tmp/.X11-unix"
+          - "~/Projects:/root/IdeaProjects"
+          - "{{path}}:/root/.IntelliJIdea2019.3"
+          - "{{path}}/.local/share/JetBrains:/root/.local/share/JetBrains"
+          - "{{path}}/.java/.userPrefs/jetbrains:/root/.java/.userPrefs/jetbrains"
+          - "{{path}}/libs:/root/libs"
+          - "{{path}}/.m2:/root/.m2"
+          - "{{path}}/.gradle:/root/.gradle"
 
 EOF
 
